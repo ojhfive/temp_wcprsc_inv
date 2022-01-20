@@ -1,0 +1,47 @@
+type Ingredient4 @model @auth(rules: [{allow: public}]) {
+  id: ID!
+}
+
+type Ingredient3 @model @auth(rules: [{allow: public}]) {
+  id: ID!
+}
+
+type Ingredient2 @model @auth(rules: [{allow: public}]) {
+  id: ID!
+}
+
+type Ingredient1 @model @auth(rules: [{allow: public}]) {
+  id: ID!
+}
+
+type PurchaseInstance @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  purchase_date: AWSDateTime
+}
+
+enum TestTypes {
+  PCR
+  ANTIGEN
+}
+
+type BookingInstance @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  TestKitAllocation: TestKitRemoteAllocation @hasOne
+  appointment_datetime: AWSDateTime
+  customerID: ID @index(name: "byCustomer")
+}
+
+type TestKit @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  TestKitAllocation: TestKitRemoteAllocation @hasOne
+  barcode: ID
+  test_type: TestTypes
+  control_tested: Boolean
+  expiry_date: AWSDate
+  lot_number: String
+}
+
+type TestKitRemoteAllocation @model @auth(rules: [{allow: public}]) {
+  id: ID!
+}
+ 

@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "wcrscinventory",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authwcrscinventory001ba901",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2022-01-19T04:57:02.491Z"
+}

@@ -1,0 +1,21 @@
+{
+    "appName": "wcrscinventory",
+    "roleName": "pinpointLambdaRole67b0c46f",
+    "cloudformationPolicyName": "cloudformationPolicy67b0c46f",
+    "cloudWatchPolicyName": "cloudWatchPolicy67b0c46f",
+    "pinpointPolicyName": "pinpointPolicy67b0c46f",
+    "authPolicyName": "pinpoint_amplify_67b0c46f",
+    "unauthPolicyName": "pinpoint_amplify_67b0c46f",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
